@@ -1,0 +1,228 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+$intro-transition  : none;
+$global-transition : none;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin  }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+
+
+// Mixins
+
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+// Additional SCSS
+
+.sidebar .toc p, .sidebar .toc li {
+    font-size: inherit;
+}
+
+.notice, .notice--primary, .notice--info, .notice--warning, .notice--success, .notice--danger {
+	margin: 1em 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0 0.5em;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+script {
+	display: none !important;
+}
+
+.page__footer-follow {
+	float: right;
+    margin-top: -7px;
+
+    li {
+        padding: 0px;
+        text-transform: none;
+    }
+
+    a {
+        padding-right: 0px;
+        text-transform: none;
+        font-weight: normal;
+
+        i {
+            margin-right: 2px;
+        }
+    }
+}
+
+.page__footer .fab {
+    color: #3d4144;
+}
+
+.page__footer footer {
+	padding: 0 1em 1.5em;
+}
+
+.nav__title > i {
+    padding-right: 5px;
+}
+
+.page__content {
+    @include word-wrap;
+}
+
+.page__lead {
+    margin-bottom: 0px;
+}
+
+.utterances {
+    max-width: none;
+}
+
+.wide .page.nosidebar {
+    margin: auto;
+    float: none;
+}
+
+.masthead__menu {
+    ul.dropdown {
+        position: absolute;
+        padding: 15px 0px;
+        border: 1px solid #f2f3f3;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 #b6b6b63b, 0 2px 10px 0 #b6b6b63b;
+    }
+
+    .hidden-links {
+        .masthead__menu-item {
+            ul.dropdown {
+                position: inherit;
+                padding: inherit;
+            }
+        }
+    }
+}
+
+.hidden-links {
+    .masthead__menu {
+        ul.dropdown {
+            position: inherit;
+            padding: inherit;
+        }
+    }
+}
+
+up {
+    top: -0.75em;
+    position: relative;
+    font-size: 0.5em;
+}
+
+.oamls-speakers {
+    .splide__arrow {
+        background: #fff;
+        opacity: 0.8;
+    }
+}
+
+.oamls-speaker {
+    text-decoration: none !important;
+
+    .speaker-photo {
+        text-align: center;
+    }
+
+    .speaker-photo img {
+        opacity: 1.0;
+        transition: all 0.2s;
+    }
+
+    div {
+        color: #3d4144;
+    }
+
+    .speaker-info {
+        padding: 16px 20px;
+
+        .speaker-name {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .speaker-desc {
+            font-size: 0.7em;
+            font-weight: normal;
+        }
+
+    }
+}
+
+.oamls-speaker:hover {
+    .speaker-photo img {
+        opacity: 0.8;
+    }
+}
+
+.no-carousel {
+    ul.splide__list {
+        padding-left: 0px;
+        text-align: center;
+
+        li {
+            margin: 0px;
+            list-style: none;
+            display: inline-flex;
+        }
+
+        .oamls-speaker {
+            max-width: 230px;
+            display: inline-block;
+        }
+    }
+}
+
+.sponsors {
+    text-align: center;
+
+
+    .sponsor {
+        display: inline-block;
+        margin: 0px 32px 0px 0px;
+    }
+}
+
+.mfp-iframe-holder .mfp-content {
+    height: 100%;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .article {
+    flex: 0 0 50%;
+    padding: 10px;
+  }
+  
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+
+
